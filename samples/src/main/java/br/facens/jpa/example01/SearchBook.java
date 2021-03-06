@@ -4,25 +4,17 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class InsertBook {
+public class SearchBook {
     
     public static void main(String[] args) {
         
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("PU_SAMPLES");
 
         EntityManager em = factory.createEntityManager();
-        
-        Book b1 = new Book();
-        //b1.setId(2l);
-        b1.setAuthor("Glauco Todesco");
-        b1.setPrice(10.22);
-        b1.setTitle("The Art of Java Programming");
 
+        Book book = em.getReference(Book.class, 1l); //não vai ao banco, apenas a referencia
 
-        em.persist(b1);
-        
-        em.getTransaction().begin();
-        em.getTransaction().commit();
+        System.out.println(book);
 
         em.close();
         factory.close();
