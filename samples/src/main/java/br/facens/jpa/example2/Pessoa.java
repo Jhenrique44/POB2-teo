@@ -8,7 +8,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // cria uma unica tabela 
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // cria uma unica tabela 
 @Inheritance(strategy = InheritanceType.JOINED) //Cria as tabelas/classe e cria uma relação
 //entre elas com chaves estrangeiras / herança
 //@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)  //cada classe vira uma classe
